@@ -85,7 +85,7 @@ baseargs="$baseargs -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=50 -XX
 baseargs="$baseargs -XX:InitiatingHeapOccupancyPercent=10 -XX:G1MixedGCLiveThresholdPercent=50 "
 baseargs="$baseargs -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5100"
 
-cmd="java ${PAPER_TEST_BASE_JVM_ARGS:-$baseargs} ${PAPER_TEST_EXTRA_JVM_ARGS} -jar $jar"
+cmd="bin/java/bin/java.exe ${PAPER_TEST_BASE_JVM_ARGS:-$baseargs} ${PAPER_TEST_EXTRA_JVM_ARGS} -jar $jar"
 screen_command="screen -DURS papertest $cmd"
 tmux_command="tmux new-session -A -s Paper -n 'Paper Test' -c '$(pwd)' '$cmd'"
 

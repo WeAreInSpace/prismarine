@@ -96,3 +96,13 @@ cd "$basedir"
     exit 1
 ) || exit 1
 ) || exit 1
+
+# Apply We Are In Space
+(
+    applyPatch "base/Paper/PaperSpigot-API" PandaSpigot-API HEAD patches/api &&
+    applyPatch "base/Paper/PaperSpigot-Server" PandaSpigot-Server HEAD patches/server
+    cd "$basedir"
+) || (
+    echo "Failed to apply PandaSpigot Patches"
+    exit 1
+) || exit 1
