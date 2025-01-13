@@ -1,0 +1,47 @@
+From 3bf18a0f3368a64a881213bc9453f13b389f8b3f Mon Sep 17 00:00:00 2001
+From: WeAreInSpace <weareinspace.net@gmail.com>
+Date: Mon, 13 Jan 2025 00:45:29 +0700
+Subject: [PATCH] Change server mod name
+
+
+diff --git a/pom.xml b/pom.xml
+index d60021747..1d999d2c0 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -32,7 +32,7 @@
+         <dependency>
+             <groupId>io.netty</groupId>
+             <artifactId>netty-all</artifactId>
+-            <version>4.1.24.Final</version>
++            <version>4.1.92.Final</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index 3b982f990..8327d37a9 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -1156,7 +1156,7 @@ public abstract class MinecraftServer implements ICommandListener, Runnable, IAs
+     }
+ 
+     public String getServerModName() {
+-        return "Paper"; //Paper - Paper > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
++        return "Prismarine"; //Prismarine - WeAreInSpace Prismarine >> //Paper - Paper > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
+     }
+ 
+     public CrashReport b(CrashReport crashreport) {
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftArt.java b/src/main/java/org/bukkit/craftbukkit/CraftArt.java
+index 6f94348dc..b9f709b9e 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftArt.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftArt.java
+@@ -3,6 +3,7 @@ package org.bukkit.craftbukkit;
+ import net.minecraft.server.EntityPainting.EnumArt;
+ import org.bukkit.Art;
+ 
++
+ // Safety class, will break if either side changes
+ public class CraftArt {
+ 
+-- 
+2.47.1.windows.1
+
