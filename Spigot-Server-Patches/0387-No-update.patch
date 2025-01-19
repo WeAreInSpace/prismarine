@@ -1,0 +1,67 @@
+From 324234807b6bd317f0ce649d473a52edb0c8f186 Mon Sep 17 00:00:00 2001
+From: WeAreInSpace <weareinspace.net@gmail.com>
+Date: Sun, 19 Jan 2025 21:55:22 +0700
+Subject: [PATCH] No update
+
+
+diff --git a/src/main/java/net/minecraft/server/EULA.java b/src/main/java/net/minecraft/server/EULA.java
+index 3623751bf..fbc983333 100644
+--- a/src/main/java/net/minecraft/server/EULA.java
++++ b/src/main/java/net/minecraft/server/EULA.java
+@@ -51,8 +51,10 @@ public class EULA {
+ 
+             fileoutputstream = new FileOutputStream(this.b);
+             properties.setProperty("eula", "false");
+-            properties.store(fileoutputstream, "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)." +
+-                    "\nand also agreeing that tacos are tasty.");  // Paper - fix lag
++            properties.store(
++                fileoutputstream,
++                "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)." + "\nand also agreeing that tacos are tasty."
++            );  // Paper - fix lag
+         } catch (Exception exception) {
+             EULA.a.warn("Failed to save {}", this.b, exception);
+         } finally {
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index 8327d37a9..57b2649e3 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -51,7 +51,6 @@ import org.spigotmc.SlackActivityAccountant; // Spigot
+ import co.aikar.timings.MinecraftTimings; // Paper
+ 
+ public abstract class MinecraftServer implements ICommandListener, Runnable, IAsyncTaskHandler, IMojangStatistics {
+-
+     private static MinecraftServer SERVER; // Paper
+     public static final Logger LOGGER = LogManager.getLogger();
+     public static final File a = new File("usercache.json");
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+index 7c82e18b9..6f7482140 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -140,7 +140,7 @@ import javax.annotation.Nonnull; // Paper
+ 
+ 
+ public final class CraftServer implements Server {
+-    private final String serverName = "Paper";
++    private final String serverName = "Prismarine";
+     private final String serverVersion;
+     private final String bukkitVersion = Versioning.getBukkitVersion();
+     private final Logger logger = Logger.getLogger("Minecraft");
+diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
+index ae2c51f5d..fb5bd4060 100644
+--- a/src/main/java/org/bukkit/craftbukkit/Main.java
++++ b/src/main/java/org/bukkit/craftbukkit/Main.java
+@@ -218,9 +218,10 @@ public class Main {
+                     }
+                 }
+ 
+-                System.out.println("Loading libraries, please wait...");
++                System.out.println("Loading server, just a moment");
+                 MinecraftServer.main(options);
+             } catch (Throwable t) {
++                System.err.println(t);
+                 t.printStackTrace();
+             }
+         }
+-- 
+2.47.1.windows.1
+

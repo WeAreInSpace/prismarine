@@ -1,0 +1,23 @@
+From bdf81e7af8856c15437283b14bd979d750f043d2 Mon Sep 17 00:00:00 2001
+From: WeAreInSpace <weareinspace.net@gmail.com>
+Date: Sun, 19 Jan 2025 21:55:27 +0700
+Subject: [PATCH] No update
+
+
+diff --git a/src/main/java/co/aikar/timings/TimingData.java b/src/main/java/co/aikar/timings/TimingData.java
+index f222d6b7d..800736ff2 100644
+--- a/src/main/java/co/aikar/timings/TimingData.java
++++ b/src/main/java/co/aikar/timings/TimingData.java
+@@ -86,7 +86,8 @@ class TimingData {
+         List<Object> list = toArray(
+             id,
+             count,
+-            totalTime);
++            totalTime
++        );
+         if (lagCount > 0) {
+             list.add(lagCount);
+             list.add(lagTotalTime);
+-- 
+2.47.1.windows.1
+
